@@ -6,17 +6,14 @@ void main()
     int n;
     printf("Enter the number - ");
     scanf("%d",n);
-    int ans = count(n);
-    
-    printf("The digits in a number %d is %d",n,ans);
+    printf("The digits in a number %d is %d",n,count(n));
 }
 int count(int k)
 {
-    static int c;
+    int c=0;
     if(k!=0)
-    {
-        c++;
-        count(k/10);
-    }
-    return c;
+    return 1+count(k/10);
+
+    else 
+    return 0;
 }
