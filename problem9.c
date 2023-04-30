@@ -1,7 +1,7 @@
 // Write a C program to find sum of all even or odd numbers in given range using recursion.
 #include<stdio.h>
 int Sum(int,int);
-void main()
+int main()
 {
     int start,end;
     printf("Enter the starting point - ");
@@ -11,6 +11,7 @@ void main()
     scanf("%d",&end);
 
     printf("The sum of EVEN number between %d to %d is - %d",start,end,Sum(start,end));
+    return 0;
 }
 int Sum(int a,int b)
 {
@@ -20,8 +21,8 @@ int Sum(int a,int b)
         if(a%2==0)
         {
             sum+=a;
-            return Sum(a+1,b);
         }
+        return Sum(a+1,b);
     }
     else 
     return sum;
